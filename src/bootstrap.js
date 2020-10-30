@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
-import { Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route, BrowserRouter } from "react-router-dom";
 
 import reducers from "./reducers";
 
@@ -14,13 +14,14 @@ import history from './history';
 import App from "./components/app";
 import Reception from './components/reception/reception';
 import Dashboard from './components/dashboard';
-import SignIn from './components/reception/sign-in/signIn';
-import SignUp from './components/reception/sign-up/signUp';
+import SignIn from "./components/reception/signIn";
+import SignUp from './components/reception/signUp';
+
 
 function main() {
   ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-      <Router
+      <BrowserRouter
       history={history}
       >
         <App>
@@ -31,7 +32,7 @@ function main() {
             <Route path='/signup' exact component={SignUp}/>
           </Switch>
         </App>
-      </Router>
+      </BrowserRouter>
     </Provider>,
     document.querySelector(".app-wrapper")
   );

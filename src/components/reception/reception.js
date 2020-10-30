@@ -1,20 +1,51 @@
 import React, { Component } from 'react';
-import history from 'history';
 
-import { GreenButton, RedButton } from '../buttons';
+import { useHistory, Link } from 'react-router-dom';
 
+class Reception extends Component {
+    constructor(props) {
+        super(props);
 
-export default class Reception extends Component {
+    }    
+
     render() {
         return (
-            <div>
-                <h1>Have an account?</h1>
-                <GreenButton 
-                onClick={() => history.push('/signin')}
-                />
-                <RedButton />
+            <div className='reception'>
+                <div className='reception__title'>
+                    Have an account?
+                </div>
+                {/* <a 
+                onClick={() => this.getSingInForm()}
+                >
+                    Green Buuton
+                </a> */}
+                <div className='reception__buttons'>
+                    <div className='reception__buttons__green'>
+                        <div className='button-description'>
+                            Yes.
+                        </div>
+                        <div className='button-square'>
+                            <Link to="/signin" className='button-green-square'>
+                                Green Button
+                            </Link>
+                        </div>
+                    </div>
+                    <div className='reception__buttons__red'>
+                        <div className='button-description'>
+                            No.
+                        </div>
+                        <div className='button-triangle'>
+                            <Link to="/signup" className='button-red-square'>
+                                Red Button
+                            </Link>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         );
     }
 }
+
+export default Reception;

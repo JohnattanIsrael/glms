@@ -27,6 +27,7 @@ class SignIn extends Component {
         // axios.post("glms-e42b5.firebaseapp.com")
         event.preventDefault();
         console.log('handleSubmit', this.state.email, this.state.password);
+
     }
 
 
@@ -35,6 +36,9 @@ class SignIn extends Component {
             <div>
                 <Reception />
                 <div className='signin'>
+                    <Link to="/" className='button-back'>
+                        Back.
+                    </Link>
                     <div className='signin__form'>
                         <form
                             onSubmit={this.handleSubmit}
@@ -56,9 +60,12 @@ class SignIn extends Component {
 
                             <div className='signin-buttons'>
                                 <div className='signin-buttons__button'>
-                                    <button type='submit' className='signin-buttons__circle'>
+                                    {/* <button type='submit' className='signin-buttons__circle'>
                                         Blue Button
-                                </button>
+                                </button> */}
+                                    <Link to="/dashboard" className='button-blue-circle'>
+                                        Blue Button
+                                </Link>
                                 </div>
                                 <div className='signin-buttons__description'>
                                     Send.

@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 
-export default class Dashboard extends Component {
+
+
+const Dashboard = ({handleLogOut}) => {
 
     // fetchData = () => {
     //     axios.get('https://glms-e42b5.firebaseio.com/user.json').then(response => {
     //         // console.log(response);
     //         let data = response;
     //         console.log("Hero Level:", data.data.hero.level);
-            
+
 
     //     }).catch(error => {
     //         console.log("fetchData erro", error);
@@ -16,13 +18,14 @@ export default class Dashboard extends Component {
     // }
 
 
+    return (
+        <div>
+            <h1>Dashboard</h1>
+            <button onClick={handleLogOut}>Logout</button>
+            {/* {this.fetchData()} */}
+        </div>
+    );
 
-    render() {
-        return (
-            <div>
-                <h1>Dash board</h1>
-                {/* {this.fetchData()} */}
-            </div>
-        );
-    }
 }
+
+export default Dashboard;

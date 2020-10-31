@@ -17,6 +17,8 @@ import Dashboard from './components/dashboard';
 import SignIn from "./components/reception/signIn";
 import SignUp from './components/reception/signUp';
 
+import Login from './components/login';
+
 
 function main() {
   ReactDOM.render(
@@ -26,7 +28,7 @@ function main() {
       >
         <App>
           <Switch>
-            <Route path='/' exact component={Reception}/>
+            <Route path='/' exact component={Login}/>
             <Route path='/dashboard' exact component={Dashboard}/>
             <Route path='/signin' exact component={SignIn}/>
             <Route path='/signup' exact component={SignUp}/>

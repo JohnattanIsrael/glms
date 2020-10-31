@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import {Form, Button, Card } from 'react-bootstrap';
+import { useHistory, Link } from 'react-router-dom';
+import axios from 'axios';
 
-export default class SignUp extends Component {
+import Reception from './reception';
+
+class SignUp extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            name: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -23,28 +27,37 @@ export default class SignUp extends Component {
     handleSubmit(event) {
         // axios.post("glms-e42b5.firebaseapp.com")
         event.preventDefault();
-        console.log('handleSubmit', this.state.email, this.state.password);
+        console.log('handleSubmit', this.state.email, this.state.password, this.state.name);
     }
 
+
     render() {
-        
         return (
             <div>
-                <div className='signup__title'>
-                    Sign Up
+                <div className='reception__title'>
+                    Register please.
                 </div>
                 <div className='signup'>
+                    <Link to="/" className='button-back'>
+                        Back.
+                    </Link>
                     <div className='signup__form'>
                         <form
                             onSubmit={this.handleSubmit}
                         >
+                            <input
+                                type='name'
+                                name='name'
+                                placeholder='Name'
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                            />
                             <input
                                 type='email'
                                 name='email'
                                 placeholder='Email'
                                 value={this.state.email}
                                 onChange={this.handleChange}
-                                
                             />
                             <input
                                 type='password'
@@ -52,7 +65,6 @@ export default class SignUp extends Component {
                                 placeholder='Password'
                                 value={this.state.password}
                                 onChange={this.handleChange}
-                                
                             />
                             <input
                                 type='password'
@@ -60,17 +72,19 @@ export default class SignUp extends Component {
                                 placeholder='Password Confirm'
                                 value={this.state.password}
                                 onChange={this.handleChange}
-                                
                             />
 
                             <div className='signup-buttons'>
                                 <div className='signup-buttons__button'>
-                                    <button type='submit' className='signup-buttons__circle'>
+                                    {/* <button type='submit' className='signup-buttons__circle'>
                                         Blue Button
-                                    </button>
+                                    </button> */}
+                                    <Link to="/dashboard" className='button-blue-circle'>
+                                        Blue Button
+                                    </Link>
                                 </div>
                                 <div className='signup-buttons__description'>
-                                    Sign Up.
+                                    Send.
                             </div>
                             </div>
                         </form>
@@ -83,3 +97,5 @@ export default class SignUp extends Component {
         );
     }
 }
+
+export default SignUp;

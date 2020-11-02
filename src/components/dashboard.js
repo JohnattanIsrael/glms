@@ -1,13 +1,14 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
 
+import Map from './journey/map';
 
-const Dashboard = ({handleLogOut}) => {
+const Dashboard = ({ handleLogOut }, ...props) => {
+
 
     // fetchData = () => {
     //     axios.get('https://glms-e42b5.firebaseio.com/user.json').then(response => {
-    //         // console.log(response);
+    //         console.log(response);
     //         let data = response;
     //         console.log("Hero Level:", data.data.hero.level);
 
@@ -17,12 +18,15 @@ const Dashboard = ({handleLogOut}) => {
     //     });
     // }
 
-
     return (
         <div>
             <h1>Dashboard</h1>
             <button onClick={handleLogOut}>Logout</button>
-            {/* {this.fetchData()} */}
+            {/* {fetchData()} */}
+            {console.log(`user_id passed as prop :${props.user_id}`)}
+
+
+            <Map />
         </div>
     );
 

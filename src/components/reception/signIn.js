@@ -65,7 +65,7 @@ class SignIn extends Component {
                                 </button> */}
                                     <Link to="/dashboard" className='button-blue-circle'>
                                         Blue Button
-                                </Link>
+                                    </Link>
                                 </div>
                                 <div className='signin-buttons__description'>
                                     Send.

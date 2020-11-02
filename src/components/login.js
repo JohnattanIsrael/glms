@@ -3,15 +3,19 @@ import fire from '../fire';
 
 import Sign from './sign';
 import Dashboard from './dashboard';
+import Map from './journey/map';
 
 const Login =() => {
 
+    
     const [user, setUser ] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
     const [passwordError, setPasswordError] = useState('');
     const [hasAccount, setHasAccount] = useState(false);
+
+    let user_id = '';
 
     const clearInputs = () => {
         setEmail('');
@@ -64,11 +68,15 @@ const Login =() => {
         fire.auth().signOut();
     };
 
-    const authListener = () => {
+    
+    const authListener = (user_id) => {
+        user_id = '';
         fire.auth().onAuthStateChanged(user => {
             if(user) {
                 clearInputs();
                 setUser(user);
+                user_id = user.email;
+                console.log(`user_id : ${user_id}`);
             } else {
                 setUser('');
             }
@@ -77,17 +85,26 @@ const Login =() => {
 
     useEffect(() => {
         authListener();
-    }, [])
-    
+    }, []);
+
         return (
+            
             <div>
+                
                 {user ? (
+                    <div>
                     <Dashboard 
                     handleLogOut={handleLogOut}
+                    user_id={user.email}
                     />
+                    <h1>{user.email}</h1>
+                    <Map 
+                    user_id={user.email}
+                    />
+                    </div>
                 ) : (
                     <Sign 
-                    email={email}
+                    email={email, console.log(email)}
                     setEmail={setEmail}
                     password={password}
                     setPassword={setPassword}
@@ -97,8 +114,12 @@ const Login =() => {
                     setHasAccount={setHasAccount}
                     emailError={emailError}
                     passwordError={passwordError}
-                    />   
+                    />  
+                    
                 )}
+                
+                
+                
 
             </div>
         );

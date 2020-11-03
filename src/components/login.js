@@ -76,7 +76,6 @@ const Login =() => {
                 clearInputs();
                 setUser(user);
                 user_id = user.email;
-                console.log(`user_id : ${user_id}`);
             } else {
                 setUser('');
             }
@@ -97,14 +96,13 @@ const Login =() => {
                     handleLogOut={handleLogOut}
                     user_id={user.email}
                     />
-                    <h1>{user.email}</h1>
                     <Map 
                     user_id={user.email}
                     />
                     </div>
                 ) : (
                     <Sign 
-                    email={email, console.log(email)}
+                    email={email}
                     setEmail={setEmail}
                     password={password}
                     setPassword={setPassword}

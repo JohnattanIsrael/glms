@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux'
 
 import MapItem from './mapItems';
 import Journey from './journeys';
 
-export default class Map extends Component {
+class Map extends Component {
     constructor(props) {
         super(props);
 
@@ -21,7 +22,7 @@ export default class Map extends Component {
     fetchData = () => {
         // TO DO - add dimamic call based on user_email
         axios.get('https://glms-e42b5.firebaseio.com/user/j.json').then(response => {
-            console.log('response data:', response.data.journey);
+            // console.log('response data:', response.data.journey);
             this.setState({
                 data: response.data,
                 hero: response.data.hero,
@@ -35,7 +36,7 @@ export default class Map extends Component {
     journeys = () => {
         return this.state.journeys.map(item => {
             return (
-                <Journey key={item.journey_id} journey_name={item.journey_name}/>
+                <Journey key={item.journey_id} journey_id={item.journey_id} journey_name={item.journey_name}/>
             )
         })
     }
@@ -48,7 +49,7 @@ export default class Map extends Component {
 
         return (
             <div>
-                {console.log('the email to dinamically call API:', this.state.user_id)}
+                {/* {console.log('the email to dinamically call API:', this.state.user_id)} */}
                 <div>
                     <MapItem
                         name={this.state.data.name}
@@ -64,3 +65,13 @@ export default class Map extends Component {
         );
     }
 }
+
+const mapStateToProps = (state, user_id) => {
+    
+    return { 
+        user_id,
+        ...state
+    }
+}
+
+export default connect(mapStateToProps)(Map);

@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios';
 
-import Reception from './reception';
+import Reception from '../reception/reception';
 
-class SignIn extends Component {
+class SignUp extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
             email: '',
-            password: ''
+            password: '',
+            name: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -26,23 +27,31 @@ class SignIn extends Component {
     handleSubmit(event) {
         // axios.post("glms-e42b5.firebaseapp.com")
         event.preventDefault();
-        console.log('handleSubmit', this.state.email, this.state.password);
-
+        console.log('handleSubmit', this.state.email, this.state.password, this.state.name);
     }
 
 
     render() {
         return (
             <div>
-                <Reception />
-                <div className='signin'>
+                <div className='reception__title'>
+                    Register please.
+                </div>
+                <div className='signup'>
                     <Link to="/" className='button-back'>
                         Back.
                     </Link>
-                    <div className='signin__form'>
+                    <div className='signup__form'>
                         <form
                             onSubmit={this.handleSubmit}
                         >
+                            <input
+                                type='name'
+                                name='name'
+                                placeholder='Name'
+                                value={this.state.name}
+                                onChange={this.handleChange}
+                            />
                             <input
                                 type='email'
                                 name='email'
@@ -57,17 +66,24 @@ class SignIn extends Component {
                                 value={this.state.password}
                                 onChange={this.handleChange}
                             />
+                            <input
+                                type='password'
+                                name='password'
+                                placeholder='Password Confirm'
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                            />
 
-                            <div className='signin-buttons'>
-                                <div className='signin-buttons__button'>
-                                    {/* <button type='submit' className='signin-buttons__circle'>
+                            <div className='signup-buttons'>
+                                <div className='signup-buttons__button'>
+                                    {/* <button type='submit' className='signup-buttons__circle'>
                                         Blue Button
-                                </button> */}
+                                    </button> */}
                                     <Link to="/dashboard" className='button-blue-circle'>
                                         Blue Button
                                     </Link>
                                 </div>
-                                <div className='signin-buttons__description'>
+                                <div className='signup-buttons__description'>
                                     Send.
                             </div>
                             </div>
@@ -82,4 +98,4 @@ class SignIn extends Component {
     }
 }
 
-export default SignIn;
+export default SignUp;

@@ -12,12 +12,10 @@ import "./style/main.scss";
 import history from './history';
 
 import App from "./components/app";
-import Reception from './components/reception/reception';
 import Dashboard from './components/dashboard';
-import SignIn from "./components/reception/signIn";
-import SignUp from './components/reception/signUp';
 
 import Login from './components/login';
+import Cards from './components/journey/cards/cards';
 
 
 function main() {
@@ -30,8 +28,7 @@ function main() {
           <Switch>
             <Route path='/' exact component={Login}/>
             <Route path='/dashboard' exact component={Dashboard}/>
-            <Route path='/signin' exact component={SignIn}/>
-            <Route path='/signup' exact component={SignUp}/>
+            <Route path='/cards' exact component={Cards}/>
           </Switch>
         </App>
       </BrowserRouter>

@@ -15,7 +15,6 @@ const Login =() => {
     const [passwordError, setPasswordError] = useState('');
     const [hasAccount, setHasAccount] = useState(false);
 
-    let user_id = '';
 
     const clearInputs = () => {
         setEmail('');

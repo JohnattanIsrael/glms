@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
 
-import Map from './journey/map';
-
 const Dashboard = ({ handleLogOut }, ...props) => {
 
     return (

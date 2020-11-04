@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 
 
 import Card from './card';
@@ -16,6 +16,7 @@ class Cards extends Component {
 
         this.cards = this.cards.bind(this);
     }
+
 
     fetchCards = () => {
         // TO DO - add dimamic call based on card id
@@ -36,37 +37,37 @@ class Cards extends Component {
             this.state.cards.map(card => {
                 return (
                     <Card
-                        key = {card.card_id}
-                        card_name = {card.card_name}
-                        explanation = {card.explanation}
-                        image_url = {card.image}
-                        points = {card.points}
-                        reference = {card.reference}
+                        key={card.card_id}
+                        card_name={card.card_name}
+                        explanation={card.explanation}
+                        image_url={card.image}
+                        points={card.points}
+                        reference={card.reference}
                     />
                 )
             })
         )
-}
+    }
 
-componentDidMount() {
-    this.fetchCards();
+    componentDidMount() {
+        this.fetchCards();
 
-}
+    }
 
-render() {
+    render() {
 
-    return (
-        <div>
+        return (
             <div>
-                Cards
+                <div>
+                    <Link to='/'>Back</Link>
                 </div>
-            <div>
-                {this.cards()}
-            </div>
+                <div>
+                    {this.cards()}
+                </div>
 
-        </div>
-    );
-}
+            </div>
+        );
+    }
 }
 
 export default Cards;

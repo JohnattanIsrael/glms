@@ -16,45 +16,85 @@ const Sign = (props) => {
     } = props;
 
     return (
-        <section className='login'>
-            <div className='login__container'>
-                <label>Username</label>
-                <input
-                    type='text'
-                    autoFocus
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <p className='error-message'>{emailError}</p>
-                <label>Password</label>
-                <input
-                    type='password'
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <p className='error-message'>{passwordError}</p>
-                <div className='button-container'>
-                    {hasAccount ? (
+        <section>
+            <div className='login'>
+
+                {hasAccount ? (
+
+                    <div className='login-left'>
+                        <div className='login-left__title'>
+                            Don´t have an account ?
+                        </div>
+                        <div className='login-left__button'>
+                            <div onClick={() => setHasAccount(!hasAccount)}>
+                                <div className='login-left__legend'>
+                                    Sign up
+                                </div>
+                                <div className='button'>
+                                    <div className='button__green'></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                ) : (
+
                         <div>
+                            <div className='login-left__title'>
+                                Have an account ?
+                            </div>
+                            <div className='login-left__button'>
+                                <div onClick={() => setHasAccount(!hasAccount)}>
+                                    <div className='login-left__legend'>
+                                        Sign in
+                                    </div>
+                                    <div className='button'>
+                                        <div className='button__red'></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    )}
+
+                <div className='login-right'>
+                    <div className='login-right__form'>
+                        <label>Username</label>
+                        <input
+                            type='text'
+                            autoFocus
+                            required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <p className='error-message'>{emailError}</p>
+                        <label>Password</label>
+                        <input
+                            type='password'
+                            required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <p className='error-message'>{passwordError}</p>
+                    </div>
+                    {hasAccount ? (
+                        <div className='login-right__button'>
                             <button onClick={handleLogin}>
-                                Sign In
+                                <div className='loging-right__button-button button__blue' />
+                                <div className='login-right__legend'>
+                                    Sign In
+                                </div>
                             </button>
-                            <p>
-                                Don´t have an account ?
-                                <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span>
-                            </p>
                         </div>
                     ) : (
-                            <div>
+                            <div className='login-right__button'>
+
                                 <button onClick={handleSignUp}>
-                                    Sign Up
+                                    <div className='loging-right__button-button button__blue' />
+                                    <div className='login-right__legend'>
+                                        Sign Up
+                                    </div>
                                 </button>
-                                <p>
-                                    Have an account ?
-                                    <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
-                                </p>
                             </div>
                         )}
                 </div>

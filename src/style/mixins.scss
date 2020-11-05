@@ -1,0 +1,9 @@
+@mixin background {
+    background-color: #fffcf2 ;
+}
+
+@mixin easy-to-read {
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    color: #021b29;
+}

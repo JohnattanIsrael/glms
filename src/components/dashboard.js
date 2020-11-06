@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+// faSquare, faCircle, faCaretUp, faShapes, faCaretLeft, faCaretRight, faSignInAlt,
 
 const Dashboard = ({ handleLogOut }, ...props) => {
 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <button onClick={handleLogOut}>Logout</button>
+        <div className='dashboard-navbar'>
+    
+            <div className='dashboard-navbar__logout' onClick={handleLogOut}>
+                <FontAwesomeIcon icon={faSignOutAlt}/>
+            </div>
 
         </div>
     );

@@ -1,0 +1,19 @@
+.user-detail {
+    position: fixed;
+
+    &__level{
+        font-size: 400px;
+        height: 400px;
+        position: relative;
+        left: -150px;
+        @include blue();
+    }
+    &__name{
+        font-size: 120px;
+        @include gray();
+    }
+    &__points{
+        font-size: 50px;
+        @include green();
+    }
+}

@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquare, faCircle, faCaretUp, faShapes, faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons'
+
+
 const Sign = (props) => {
 
     const {
@@ -25,14 +29,16 @@ const Sign = (props) => {
                         <div className='login-left'>
                             <div className='login-left__title'>
                                 Don´t have an account ?
-                        </div>
+                            </div>
                             <div className='login-left__button'>
-                                <div onClick={() => setHasAccount(!hasAccount)}>
+                                <div className='login-left__items' onClick={() => setHasAccount(!hasAccount)}>
                                     <div className='login-left__legend'>
-                                        Sign up
-                                </div>
+                                        or Sign Up.
+                                    </div>
                                     <div className='button'>
-                                        <div className='button__green'></div>
+                                        <div className='button__green'>
+                                            <FontAwesomeIcon icon={faSquare} />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -45,12 +51,14 @@ const Sign = (props) => {
                                     Have an account ?
                             </div>
                                 <div className='login-left__button'>
-                                    <div onClick={() => setHasAccount(!hasAccount)}>
+                                    <div className='login-left__items' onClick={() => setHasAccount(!hasAccount)}>
                                         <div className='login-left__legend'>
-                                            Sign in
-                                    </div>
+                                            or Sign In.
+                                        </div>
                                         <div className='button'>
-                                            <div className='button__red'></div>
+                                            <div className='button__blue'>
+                                                <FontAwesomeIcon icon={faSquare} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -60,42 +68,51 @@ const Sign = (props) => {
 
                     <div className='login-right'>
                         <div className='login-right__form'>
-                            <label>Username</label>
+                            <p className='error-message'>{emailError}</p>
                             <input
+                                className='login-right__form__input'
                                 type='text'
                                 autoFocus
                                 required
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <p className='error-message'>{emailError}</p>
-                            <label>Password</label>
+                            <label>Username</label>
+
+                            <p className='error-message'>{passwordError}</p>
                             <input
+                                className='login-right__form__input'
                                 type='password'
                                 required
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                            <p className='error-message'>{passwordError}</p>
+                            <label>Password</label>
+
                         </div>
                         {hasAccount ? (
                             <div className='login-right__button'>
-                                <button onClick={handleLogin}>
-                                    <div className='loging-right__button-button button__blue' />
+                                <div className='loging-right__button-button' onClick={handleLogin}>
+                                    <div className=' button button__blue'>
+                                        <FontAwesomeIcon icon={faCircle} />
+                                    </div>
                                     <div className='login-right__legend'>
-                                        Sign In
+                                        Sign In.
+                                    </div>
                                 </div>
-                                </button>
                             </div>
                         ) : (
                                 <div className='login-right__button'>
 
-                                    <button onClick={handleSignUp}>
-                                        <div className='loging-right__button-button button__blue' />
+                                    <div className='loging-right__button-button' onClick={handleSignUp}>
+                                        <div className=' button button__blue'>
+                                            <FontAwesomeIcon icon={faCircle} />
+                                        </div>
                                         <div className='login-right__legend'>
-                                            Sign Up
+                                            Sign Up.
+                                        </div>
+
                                     </div>
-                                    </button>
                                 </div>
                             )}
                     </div>

@@ -19,3 +19,12 @@
 @mixin gray {
     color:#6d6876;
 }
+
+@mixin journey {
+    width: 250px;
+    height: 170px;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: right;
+    background-size: 170px;
+}

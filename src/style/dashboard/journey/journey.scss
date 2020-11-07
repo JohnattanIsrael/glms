@@ -1,4 +1,8 @@
 .journey{
+    height: 170px;
+    a{
+        text-decoration: none;
+    }
 
 }
 
@@ -18,13 +22,11 @@
     }
 }
 
-.journey-wrapper {
+.journey-links {
     writing-mode: vertical-lr;
     transform: rotate(180deg);
-
-    a{
-        text-decoration: none;
-    }
+    font-size: 14px;
+    line-height: 3px;
 
     &__solid {
         color: rgba($color: #3d3d3d, $alpha: .7);
@@ -35,11 +37,68 @@
     &__more-transparent{
         color: rgba($color: #3d3d3d, $alpha: .2);
     }
+    &__almost-gone{
+        color: rgba($color: #3d3d3d, $alpha: .1);
+    }
 }
 
 .journey-image{
-
     &__1{
-        
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/1.jpg");
+        @include journey();
+    }
+    &__2{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/2.jpg");
+        @include journey();
+    }
+    &__3{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/3.jpg");
+        @include journey();
+    }
+    &__4{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/4.jpg");
+        @include journey();
+    }
+    &__5{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/5.jpg");
+        @include journey();
+    }
+    &__6{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/6.jpg");
+        @include journey();
+    }
+    &__7{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/7.jpg");
+        @include journey();
+    }
+    &__8{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/8.jpg");
+        @include journey();
+    }
+    &__9{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/9.jpg");
+        @include journey();
+    }
+    &__10{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/10.jpg");
+        @include journey();
+    }
+    &__11{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/11.jpg");
+        @include journey();
+    }
+    &__12{
+        background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/12.jpg");
+        @include journey();
     }
 }
+
+.journey-card{
+    opacity: .6;
+    transition: 1s;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+

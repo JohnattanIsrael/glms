@@ -7,17 +7,20 @@
     font-weight: 400;
 }
 
-@mixin green {
-    color:#0b8c2b;
+@mixin yellow {
+    color:#F3B562;
 }
 @mixin blue {
-    color:#3491af;
+    color:#8CBEB2;
 }
 @mixin red {
-    color:#ff4e35;
+    color:#F06060;
 }
 @mixin gray {
-    color:#6d6876;
+    color:#5C4B51;
+}
+@mixin cream {
+    color: #F2EBBF;
 }
 
 @mixin journey {

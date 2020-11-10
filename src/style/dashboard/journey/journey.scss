@@ -29,13 +29,13 @@
     line-height: 3px;
 
     &__solid {
-        color: rgba($color: #3d3d3d, $alpha: .7);
+        color: rgba($color: #3d3d3d, $alpha: .8);
     }
     &__transparent{
-        color: rgba($color: #3d3d3d, $alpha: .4);
+        color: rgba($color: #3d3d3d, $alpha: .5);
     }
     &__more-transparent{
-        color: rgba($color: #3d3d3d, $alpha: .2);
+        color: rgba($color: #3d3d3d, $alpha: .3);
     }
     &__almost-gone{
         color: rgba($color: #3d3d3d, $alpha: .1);
@@ -95,7 +95,7 @@
 
 .journey-card{
     opacity: .6;
-    transition: 1s;
+    transition: 0.5s ease;
 
     &:hover {
         opacity: 1;

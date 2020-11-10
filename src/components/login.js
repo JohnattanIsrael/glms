@@ -1,20 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import fire from '../fire';
 
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { faSquare, faCircle, faCaretUp, faShapes, faCaretLeft, faCaretRight, faSignOutAlt, faSignInAlt } from "@fortawesome/free-solid-svg-icons";
-
-// library.add(
-//   faSquare, 
-//   faCircle,
-//   faCaretUp, 
-//   faShapes, 
-//   faCaretLeft, 
-//   faCaretRight,
-//   faSignOutAlt,
-//   faSignInAlt
-// )
-
 import Sign from './sign';
 import Dashboard from './dashboard';
 import Map from './journey/map';

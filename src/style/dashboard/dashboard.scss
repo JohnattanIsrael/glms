@@ -11,10 +11,11 @@
     width: 100vw;
     display: grid;
     justify-content: right;
-
     position: fixed;
+
     &__logout{
-        @include blue();
-        padding-right: 40px;
+        @include red();
+        padding-right: 35px;
+
     }    
 }

@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 export default function (props) {
 
     const position = () => {
-        if ((props.journey_id + 1) % 3 == 0) {
+        if((props.journey_id + 1) % 6 == 0){
+            return('center')
+        } else if ((props.journey_id + 1) % 3 == 0) {
             return ('right')
         } else if ((props.journey_id + 1) % 2 == 0) {
             return ('center')
         } else {
-            return ('left')
+            return('left')
         }
     }
 

@@ -1,12 +1,14 @@
 import React from "react";
 
+
+
 export default function (props) {
     return (
-        <div className='user-detail'>
+        <div className={`${props.class ? props.class : 'user-detail'}`}>
 
-            <div className='user-detail__level'>{props.level}</div>
-            <div className='user-detail__name'>{props.name}</div>
-            <div className='user-detail__points'>{props.points}</div>
+            <div className={`${props.class ? props.class : 'user-detail'}__level`}>{props.level}</div>
+            <div className={`${props.class ? props.class : 'user-detail'}__name`}>{props.name}</div>
+            <div className={`${props.class ? props.class : 'user-detail'}__points`}>{props.points} hp.</div>
 
         </div>
     )

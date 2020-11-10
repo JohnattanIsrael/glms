@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretSquareLeft } from '@fortawesome/free-solid-svg-icons'
 
+import MapItem from '../mapItems';
 import Card from './card';
 
 class Cards extends Component {
@@ -11,7 +14,9 @@ class Cards extends Component {
 
         this.state = {
             journey_name: [],
-            cards: []
+            cards: [],
+            data: [],
+            hero: []
         }
 
         this.cards = this.cards.bind(this);
@@ -24,7 +29,7 @@ class Cards extends Component {
             // console.log('response data:', response.data.cards);
             this.setState({
                 journey_name: response.data.journey_name,
-                cards: response.data.cards
+                cards: response.data.cards,
             })
         }).catch(error => {
             console.log(`fetchCards error : ${error}`);
@@ -49,19 +54,42 @@ class Cards extends Component {
         )
     }
 
+    fetchData = () => {
+        // TO DO - add dimamic call based on user_email
+        axios.get('https://glms-e42b5.firebaseio.com/user/j.json').then(response => {
+            // console.log('response data:', response.data.journey);
+            this.setState({
+                data: response.data,
+                hero: response.data.hero
+            })
+        }).catch(error => {
+            console.log(`fetchData error : ${error}`);
+        });
+    }
+
     componentDidMount() {
         this.fetchCards();
+        this.fetchData();
 
     }
 
     render() {
 
         return (
-            <div>
-                <div>
-                    <Link to='/'>Back</Link>
+            <div className='cards-page'>
+                <div className='cards-page__navbar'>
+                    <Link to='/'>
+                        <FontAwesomeIcon icon={faCaretSquareLeft} />
+                    </Link>
+                    <MapItem
+                        name={this.state.data.name}
+                        level={this.state.hero.level}
+                        points={this.state.hero.points}
+                        class='cards-user'
+                    />
                 </div>
-                <div>
+
+                <div className='cards-rail'>
                     {this.cards()}
                 </div>
 

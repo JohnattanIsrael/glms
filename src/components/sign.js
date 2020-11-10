@@ -36,7 +36,7 @@ const Sign = (props) => {
                                         or Sign Up.
                                     </div>
                                     <div className='button'>
-                                        <div className='button__green'>
+                                        <div className='button__yellow'>
                                             <FontAwesomeIcon icon={faSquare} />
                                         </div>
                                     </div>
@@ -56,7 +56,7 @@ const Sign = (props) => {
                                             or Sign In.
                                         </div>
                                         <div className='button'>
-                                            <div className='button__blue'>
+                                            <div className='button__yellow'>
                                                 <FontAwesomeIcon icon={faSquare} />
                                             </div>
                                         </div>

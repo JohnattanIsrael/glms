@@ -1,15 +1,107 @@
-import React from "react";
+import { faKissBeam } from "@fortawesome/free-solid-svg-icons";
+import React, { Component } from "react";
 
 
-export default function (props) {
-    return (
-        <div>
-            <h2>name: {props.card_name}</h2>
-            <h4>explanation: {props.explanation}</h4>
-            <h4>image url: {props.image_url}</h4>
-            <h4>points : {props.points}</h4>
-            <h4>reference: {props.reference}</h4>
+export default class Card extends Component {
+    constructor(props) {
+        super(props);
 
-        </div>
-    )
+        this.state = {
+            showCard: false
+        }
+
+        this.handleCardFace = this.handleCardFace.bind(this);
+        this.handleCardBack = this.handleCardBack.bind(this);
+        this.cardBack = this.cardBack.bind(this);
+        this.cardFace = this.cardFace.bind(this);
+        this.cardState = this.cardState.bind(this);
+        this.handleCard = this.handleCard.bind(this);
+    }
+
+    handleCardBack = () => {
+        this.setState = {
+            showCard: true
+        }
+    }
+
+    handleCardFace = () => {
+        this.setState = {
+            showCard: false
+        }
+    }
+
+    cardFace = () => {
+        return (
+            <div className='card-front'>
+                <div className='card-front__name'>{this.props.card_name}</div>
+            </div>
+        )
+    }
+
+    cardBack = () => {
+        return (
+            <div className='card__back'>
+                <div className='card__back__text'>
+                    <div className='card-front__name'>{this.props.card_name}</div>
+                    <div>explanation: {this.props.explanation}</div>
+                </div>
+                <div className='card__back__image'>
+                    {/* <h4>image url: {this.props.image_url}</h4> */}
+                </div>
+                {/* <div>reference: {this.props.reference}</div> */}
+                <div className='card-front__points'>{this.props.points}</div>
+            </div>
+        )
+    }
+
+    cardState = () => {
+        return (
+            this.state.showCard ? this.handleCardBack() && console.log(this.state) : this.handleCardFace() && console.log(this.state)
+        )
+        // if (this.state.showCard == true) {
+        //     this.handleCardBack();
+        //     console.log(this.state);             
+        // } else if (this.state.showCard == false) {
+        //     this.handleCardFace();
+        //     console.log(this.state); 
+        // }
+    }
+
+    handleCard = () => {
+        if (this.state.showCard == true) {
+            this.cardFace();
+        } else if (this.state.showCard == false) {
+            this.cardBack();
+        }
+    }
+
+    render() {
+        return (
+            <div className='card'>
+
+                <div className='card__front'>
+                    <div className='card__front__name'>{this.props.card_name}</div>
+                </div>
+
+                <div className='card__back'>
+                    <div className='card__back__content'>
+                        <div className='card__back__text'>
+                            <div className='card__back__name'>{this.props.card_name}</div>
+                            <div className='card__back__explanation'>{this.props.explanation}</div>
+                        </div>
+                        <div className='card__back__reference'>link...</div>
+                        {/* <div>reference: {this.props.reference}</div> */}
+
+                        <div className='card__back__image'>
+                            <img src='http://via.placeholder.com/200x100' />
+                            {/* {this.props.image_url} */}
+                        </div>
+
+                        <div className='card__back__points'>{this.props.points}</div>
+                    </div>
+                </div>
+
+            </div>
+        )
+    }
 }

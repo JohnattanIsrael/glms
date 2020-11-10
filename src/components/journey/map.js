@@ -48,7 +48,7 @@ class Map extends Component {
     render() {
 
         return (
-            <div className='dashboard'>
+            <div className={`dashboard`}>
                 {/* {console.log('the email to dinamically call API:', this.state.user_id)} */}
                 <div className='dashboard__left'>
                     <MapItem

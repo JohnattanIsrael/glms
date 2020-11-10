@@ -43,26 +43,26 @@
 }
 
 .button {
-    background-color: #ffc942;
+    background-color: #F2EBBF;
     height: 115px;
     width: 115px;
-    border-radius: 10px;
-    border: 3px solid hsl(6, 20%, 49%);
+    border-radius: 40px;
+    border: 3px solid #5C4B51;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 
     &__blue{
-        color: #3491af;
+        color: #8CBEB2;
         
     }
     &__red{
-        color: #ff4e35;
+        color: #F06060;
         
     }
-    &__green{
-        color: #0b8c2b;
+    &__yellow{
+        color: #F3B562;
         
     }
 }
@@ -70,6 +70,13 @@
 .svg-inline--fa.fa-w-16 {
     width: 36px;
     height: 36px;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    &:hover {
+        width: 39px;
+        height: 39px;
+    }
 }
 
 

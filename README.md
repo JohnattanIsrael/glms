@@ -1,5 +1,5 @@
-# React/Redux/Router Starter Project
+# MVP for Gamified Learning Management System
 
-> Provided for the students of the [Bottega Code School](https://bottega.tech/)
+> Build on React JS
 
-*Fork from [es6-webpack2-starter](https://github.com/micooz/es6-webpack2-starter)*
+*...*

@@ -15,12 +15,23 @@
     align-items: end;
     column-gap: 20px;
 
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
 }
 
 .login-left {
     display: flex;
     flex-direction: column;
     align-self: center;
+
+    @media screen and (max-width: 700px) {
+        justify-content: end;
+        width: 235px;
+    }
 
     &__items {
         display: flex;
@@ -29,6 +40,10 @@
     &__title {
         font-size: 56px;
         text-align: end;
+        @media screen and (max-width: 700px) {
+            font-size: 26px;
+            padding-bottom: 20px;
+        }
     }
     &__button {
         display: flex;
@@ -52,6 +67,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+
+    @media screen and (max-width: 700px) {
+        height: 20px;
+        width: 20px;
+    }
 
     &__blue{
         color: #8CBEB2;
@@ -83,6 +103,11 @@
 .loging-right__button-button{
     display: flex;
     align-items: flex-end;
+    @media screen and (max-width: 700px) {
+        flex-direction: row-reverse;
+        column-gap: 20px;
+    }
+    
 }
 
 .login-right {
@@ -90,8 +115,18 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 25px;
 
+    @media screen and (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
     &__form{
         display: grid;
+        @media screen and (max-width: 700px) {
+            width: 235px;
+        }
+        
         label{
             font-size: 15px;
             color: #a6a6a6
@@ -114,6 +149,9 @@
 
     &__button{
         display: flex;
+        @media screen and (max-width: 700px) {
+            justify-content: flex-end;
+        }
     }
 
     &__legend{

@@ -89,15 +89,12 @@ export default class Card extends Component {
                             <div className='card__back__name'>{this.props.card_name}</div>
                             <div className='card__back__explanation'>{this.props.explanation}</div>
                         </div>
-                        <div className='card__back__reference'>link...</div>
-                        {/* <div>reference: {this.props.reference}</div> */}
-
+                        <a className='card__back__reference' href={this.props.reference}>more on this...</a>
                         <div className='card__back__image'>
-                            <img src='http://via.placeholder.com/200x100' />
-                            {/* {this.props.image_url} */}
+                            <img src={this.props.image_url} />
                         </div>
 
-                        <div className='card__back__points'>{this.props.points}</div>
+                        <div className='card__back__points'>{this.props.points} points.</div>
                     </div>
                 </div>
 

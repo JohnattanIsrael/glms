@@ -28,7 +28,7 @@ const Sign = (props) => {
 
                         <div className='login-left'>
                             <div className='login-left__title'>
-                                Don´t have an account ?
+                                Enter your account.
                             </div>
                             <div className='login-left__button'>
                                 <div className='login-left__items' onClick={() => setHasAccount(!hasAccount)}>
@@ -48,7 +48,7 @@ const Sign = (props) => {
 
                             <div>
                                 <div className='login-left__title'>
-                                    Have an account ?
+                                    Create an account.
                             </div>
                                 <div className='login-left__button'>
                                     <div className='login-left__items' onClick={() => setHasAccount(!hasAccount)}>

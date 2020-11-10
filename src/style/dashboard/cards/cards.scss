@@ -111,9 +111,6 @@
             color: #fffcf2;
         }
 
-        &__text{
-            
-        }
         &__name{
             font-size: 55px;
         }
@@ -121,13 +118,16 @@
             font-size: 20px;
         }
         &__reference{
+            color: #fffcf2;
             font-size: 14px;
             font-style: italic;
             transition: all .3s ease;
             cursor: help;
+            text-decoration: none;
 
             &:hover {
                 @include gray();
+                text-decoration: none;
             }
         }
 

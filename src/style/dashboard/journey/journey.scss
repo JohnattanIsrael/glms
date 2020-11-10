@@ -7,6 +7,14 @@
 }
 
 .journey-position {
+
+    &__left,
+    &__center,
+    &__right {
+        @media screen and (max-width: 700px) {
+            padding-bottom: 60px; 
+        }
+    }
     
     &__left{
         display: flex;

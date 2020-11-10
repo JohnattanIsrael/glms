@@ -1,19 +1,40 @@
 .user-detail {
     position: fixed;
 
+    @media screen and (max-width: 700px) {
+        position: inherit;
+        padding-left: 50px;   
+    }
+
     &__level{
         font-size: 400px;
         height: 400px;
         position: relative;
         left: -150px;
         @include blue();
+
+        @media screen and (max-width: 700px) {
+            left: 0px;
+            font-size: 40px;
+            height: 40px;  
+        }
+        
     }
     &__name{
         font-size: 120px;
         @include gray();
+
+        @media screen and (max-width: 700px) {
+            font-size: 60px;
+        }
     }
     &__points{
         font-size: 50px;
         @include yellow();
+
+        @media screen and (max-width: 700px) {
+            font-size: 30px;
+            
+        }
     }
 }

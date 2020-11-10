@@ -93,6 +93,7 @@ class Cards extends Component {
                     {this.cards()}
                 </div>
 
+                <div className='footer'> by Johnattan M Angeles </div>
             </div>
         );
     }

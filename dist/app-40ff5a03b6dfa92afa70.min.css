@@ -1,0 +1,680 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0px;
+  overflow-x: hidden;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+  font-family: 'montserrat';
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+}
+
+.app-wrapper {
+  margin-top: 2rem;
+  background-color: #fffcf2;
+}
+
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.login-wrapper .login-content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+@media screen and (max-width: 700px) {
+  .login {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+  }
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+@media screen and (max-width: 700px) {
+  .login-left {
+    justify-content: end;
+    width: 235px;
+  }
+}
+
+.login-left__items {
+  display: flex;
+}
+
+.login-left__title {
+  font-size: 56px;
+  text-align: end;
+}
+
+@media screen and (max-width: 700px) {
+  .login-left__title {
+    font-size: 26px;
+    padding-bottom: 20px;
+  }
+}
+
+.login-left__button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-left__legend {
+  font-size: 20px;
+  align-self: flex-end;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.button {
+  background-color: #F2EBBF;
+  height: 115px;
+  width: 115px;
+  border-radius: 40px;
+  border: 3px solid #5C4B51;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+  .button {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.button__blue {
+  color: #8CBEB2;
+}
+
+.button__red {
+  color: #F06060;
+}
+
+.button__yellow {
+  color: #F3B562;
+}
+
+.svg-inline--fa.fa-w-14,
+.svg-inline--fa.fa-w-16 {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.svg-inline--fa.fa-w-14:hover,
+.svg-inline--fa.fa-w-16:hover {
+  width: 39px;
+  height: 39px;
+}
+
+.loging-right__button-button {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 700px) {
+  .loging-right__button-button {
+    flex-direction: row-reverse;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+  }
+}
+
+.login-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+
+@media screen and (max-width: 700px) {
+  .login-right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+
+.login-right__form {
+  display: grid;
+}
+
+@media screen and (max-width: 700px) {
+  .login-right__form {
+    width: 235px;
+  }
+}
+
+.login-right__form label {
+  font-size: 15px;
+  color: #a6a6a6;
+}
+
+.login-right__form__input,
+.login-right__form textarea {
+  background-color: #fffcf2;
+  width: 100%;
+  height: 30px;
+  border: 0px solid transparent;
+  border-bottom: 1px solid #6d6876;
+  box-shadow: 2px 3px 20px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.login-right__form__input:focus,
+.login-right__form textarea:focus {
+  outline: none;
+}
+
+.login-right__button {
+  display: flex;
+}
+
+@media screen and (max-width: 700px) {
+  .login-right__button {
+    justify-content: flex-end;
+  }
+}
+
+.login-right__legend {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+@media screen and (max-width: 700px) {
+  .dashboard {
+    display: flow-root;
+  }
+}
+
+.dashboard__right {
+  display: grid;
+}
+
+.dashboard__right__cards {
+  grid-row: 1/-1;
+}
+
+.dashboard__right, .dashboard__right__journeys {
+  padding: 40px;
+}
+
+.dashboard-navbar {
+  width: 100vw;
+  display: grid;
+  justify-content: right;
+  position: fixed;
+}
+
+.dashboard-navbar__logout {
+  color: #F06060;
+  padding-right: 35px;
+}
+
+.user-detail {
+  position: fixed;
+}
+
+@media screen and (max-width: 700px) {
+  .user-detail {
+    position: inherit;
+    padding-left: 50px;
+  }
+}
+
+.user-detail__level {
+  font-size: 400px;
+  height: 400px;
+  position: relative;
+  left: -150px;
+  color: #8CBEB2;
+}
+
+@media screen and (max-width: 700px) {
+  .user-detail__level {
+    left: 0px;
+    font-size: 40px;
+    height: 40px;
+  }
+}
+
+.user-detail__name {
+  font-size: 120px;
+  color: #5C4B51;
+}
+
+@media screen and (max-width: 700px) {
+  .user-detail__name {
+    font-size: 60px;
+  }
+}
+
+.user-detail__points {
+  font-size: 50px;
+  color: #F3B562;
+}
+
+@media screen and (max-width: 700px) {
+  .user-detail__points {
+    font-size: 30px;
+  }
+}
+
+.journey {
+  height: 170px;
+}
+
+.journey a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 700px) {
+  .journey-position__left, .journey-position__center, .journey-position__right {
+    padding-bottom: 60px;
+  }
+}
+
+.journey-position__left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.journey-position__center {
+  display: flex;
+  justify-content: center;
+}
+
+.journey-position__right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.journey-links {
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 14px;
+  line-height: 3px;
+}
+
+.journey-links__solid {
+  color: rgba(61, 61, 61, 0.8);
+}
+
+.journey-links__transparent {
+  color: rgba(61, 61, 61, 0.5);
+}
+
+.journey-links__more-transparent {
+  color: rgba(61, 61, 61, 0.3);
+}
+
+.journey-links__almost-gone {
+  color: rgba(61, 61, 61, 0.1);
+}
+
+.journey-image__1 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/1.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__2 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/2.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__3 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/3.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__4 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/4.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__5 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/5.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__6 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/6.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__7 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/7.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__8 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/8.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__9 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/9.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__10 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/10.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__11 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/11.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-image__12 {
+  background-image: url("https://raw.githubusercontent.com/JohnattanIsrael/glms/main/static/assets/12.jpg");
+  width: 250px;
+  height: 170px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: right;
+  background-size: 170px;
+}
+
+.journey-card {
+  opacity: .6;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.journey-card:hover {
+  opacity: 1;
+}
+
+.card-hidden {
+  transform: translateX(1500px);
+}
+
+.card-journey {
+  padding-bottom: 50px;
+}
+
+.card-journey__button {
+  position: fixed;
+  border-radius: 55px;
+  width: 170px;
+  height: 35px;
+  background-color: #F3B562;
+  color: #5C4B51;
+  font-size: 28px;
+  text-align: center;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.card-journey__button:hover {
+  background-color: #5C4B51;
+  color: #fffcf2;
+}
+
+@media screen and (max-width: 700px) {
+  .card-journey__button {
+    position: absolute;
+    width: 80%;
+    background-color: #F3B562;
+  }
+}
+
+.cards-page__content {
+  height: 100vw;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  padding-top: 30px;
+}
+
+.cards-page__navbar {
+  margin-left: 35px;
+  display: flex;
+}
+
+.cards-page__navbar a {
+  color: #F3B562;
+}
+
+.cards-page__navbar .cards-user {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 7px;
+}
+
+.cards-page__navbar .cards-user__level {
+  color: #8CBEB2;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.cards-page__navbar .cards-user__name {
+  color: #5C4B51;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.cards-page__navbar .cards-user__points {
+  color: #F3B562;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.cards-rail {
+  width: 70%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  row-gap: 50px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  position: fixed;
+  box-shadow: 0px 3px 21px -2px rgba(141, 108, 108, 0.2);
+  background-color: rgba(255, 252, 242, 0.8);
+  border-radius: 15px;
+  transition: all .3s ease;
+}
+
+@media screen and (max-width: 700px) {
+  .cards-rail {
+    grid-template-columns: 1fr;
+    position: absolute;
+    width: 80%;
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 1/-1;
+  grid-template-columns: 1/-1;
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+}
+
+.card__front, .card__back {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: all .3s ease;
+  grid-row: 1/-1;
+  grid-column: 1/-1;
+}
+
+.card__back {
+  transform: rotateY(-180deg);
+}
+
+.card:hover .card__front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .card__back {
+  transform: rotateY(0deg);
+}
+
+.card__front {
+  width: 170px;
+  height: 200px;
+  background-color: #ebe0e6;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #5C4B51;
+}
+
+.card__front__name {
+  font-size: 100px;
+}
+
+.card__back {
+  width: 170px;
+  height: 200px;
+  background-color: #8CBEB2;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.card__back__content {
+  padding: 20px;
+  color: #fffcf2;
+}
+
+.card__back__name {
+  font-size: 35px;
+}
+
+.card__back__explanation {
+  font-size: 14px;
+}
+
+.card__back__reference {
+  color: #fffcf2;
+  font-size: 12px;
+  font-style: italic;
+  transition: all .3s ease;
+  cursor: help;
+  text-decoration: none;
+}
+
+.card__back__reference:hover {
+  color: #5C4B51;
+  text-decoration: none;
+}
+
+.card__back__image {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__back__image img {
+  width: 100%;
+}
+
+.card__back__points {
+  font-size: 20px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=app-08ee6a5d8d19748223b1.map*/

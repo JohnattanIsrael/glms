@@ -15,8 +15,6 @@ import App from "./components/app";
 import Dashboard from './components/dashboard';
 
 import Login from './components/login';
-import Cards from './components/journey/cards/cards';
-
 
 function main() {
   ReactDOM.render(
@@ -28,7 +26,6 @@ function main() {
           <Switch>
             <Route path='/' exact component={Login}/>
             <Route path='/dashboard' exact component={Dashboard}/>
-            <Route path='/cards' exact component={Cards}/>
           </Switch>
         </App>
       </BrowserRouter>

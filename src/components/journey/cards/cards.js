@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import { myApi } from '../../../../myApi';
 import Card from './card';
 
 class Cards extends Component {
@@ -21,7 +22,7 @@ class Cards extends Component {
 
     fetchCards = () => {
 
-        axios.get('https://glms-e42b5.firebaseio.com/user/j/journey/0.json').then(response => {
+        axios.get(`${myApi()}/user/j/journey/0.json`).then(response => {
             this.setState({
                 journey_name: response.data.journey_name,
                 cards: response.data.cards,
@@ -50,7 +51,7 @@ class Cards extends Component {
 
     fetchData = () => {
 
-        axios.get('https://glms-e42b5.firebaseio.com/user/j.json').then(response => {
+        axios.get(`${myApi()}/user/j.json`).then(response => {
 
             this.setState({
                 data: response.data,

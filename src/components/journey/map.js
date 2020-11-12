@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux'
 
+import { myApi } from '../../../myApi';
+
 import MapItem from './mapItems';
 import Journey from './journeys';
 import Cards from './cards/cards';
+
 
 class Map extends Component {
     constructor(props) {
@@ -14,17 +17,16 @@ class Map extends Component {
             user_id: props.user_id,
             data: [],
             hero: [],
-            journeys: [],
-
-
+            journeys: []
         }
 
+        
         this.journeys = this.journeys.bind(this);
         this.handleShowCards = this.handleShowCards.bind(this);
     }
 
     fetchData = () => {
-        axios.get('https://glms-e42b5.firebaseio.com/user/j.json').then(response => {
+        axios.get(`${myApi()}/user/j.json`).then(response => {
             this.setState({
                 data: response.data,
                 hero: response.data.hero,

@@ -1,4 +1,3 @@
-import { faKissBeam } from "@fortawesome/free-solid-svg-icons";
 import React, { Component } from "react";
 
 
@@ -27,7 +26,6 @@ export default class Card extends Component {
                             <img src={this.props.image_url} />
                         </div>
 
-                        <div className='card__back__points'>{this.props.points} points.</div>
                     </div>
                 </div>
 

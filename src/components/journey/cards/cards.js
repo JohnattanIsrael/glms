@@ -17,6 +17,7 @@ class Cards extends Component {
             cards: [],
             data: [],
             hero: []
+
         }
 
         this.cards = this.cards.bind(this);
@@ -77,7 +78,7 @@ class Cards extends Component {
 
         return (
             <div className='cards-page'>
-                <div className='cards-page__navbar'>
+                {/* <div className='cards-page__navbar'>
                     <Link to='/'>
                         <FontAwesomeIcon icon={faCaretSquareLeft} />
                     </Link>
@@ -87,13 +88,12 @@ class Cards extends Component {
                         points={this.state.hero.points}
                         class='cards-user'
                     />
-                </div>
+                </div> */}
 
                 <div className='cards-rail'>
                     {this.cards()}
                 </div>
 
-                <div className='footer'> by Johnattan M Angeles </div>
             </div>
         );
     }

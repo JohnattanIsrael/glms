@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 import MapItem from './mapItems';
 import Journey from './journeys';
+import Cards from './cards/cards';
 
 class Map extends Component {
     constructor(props) {
@@ -13,10 +14,13 @@ class Map extends Component {
             user_id: props.user_id,
             data: [],
             hero: [],
-            journeys: []
+            journeys: [],
+
+
         }
 
         this.journeys = this.journeys.bind(this);
+        this.handleShowCards = this.handleShowCards.bind(this);
     }
 
     fetchData = () => {
@@ -33,10 +37,22 @@ class Map extends Component {
         });
     }
 
+    handleShowCards = () => {
+        if(document.getElementById('journey-card').classList.contains('card-hidden')){
+            document.getElementById('journey-card').classList.remove('card-hidden');
+            document.documentElement.scrollTop = 0;
+        } else {
+            document.getElementById('journey-card').classList.add('card-hidden');
+        }
+    }
+      
+
     journeys = () => {
         return this.state.journeys.map(item => {
             return (
-                <Journey key={item.journey_id} journey_id={item.journey_id} journey_name={item.journey_name}/>
+                <div key={item.journey_id} className={`card-journey`} onClick={() => this.handleShowCards()}>
+                    <Journey journey_id={item.journey_id} journey_name={item.journey_name} />
+                </div>
             )
         })
     }
@@ -58,7 +74,14 @@ class Map extends Component {
                     />
                 </div>
                 <div className='dashboard__right'>
-                    {this.journeys()}
+                    <div className='dashboard__right__journeys'>
+                        {this.journeys()}
+                    </div>
+                    { }
+                    <div id='journey-card' className='dashboard__right__cards card-hidden'>
+                        <Cards />
+                        <div className='card-journey__button' onClick={() => this.handleShowCards()}>Back.</div>
+                    </div>
                 </div>
 
             </div>
@@ -67,8 +90,8 @@ class Map extends Component {
 }
 
 const mapStateToProps = (state, user_id) => {
-    
-    return { 
+
+    return {
         user_id,
         ...state
     }

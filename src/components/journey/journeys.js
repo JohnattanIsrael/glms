@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-// TO DO - add dinamic prop to use as class to position it diferent each time
+
+
 export default class Journey extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +31,7 @@ export default class Journey extends Component {
         
         return (
             <div className={`journey journey-position__${this.position()}`}>
-                {/* <Link to={'/cards'}> */}
+
                 <div className={`journey-card journey-image__${this.image()}`}>
                     <div className='journey-links'>
 
@@ -43,7 +43,7 @@ export default class Journey extends Component {
 
                     </div>
                 </div>
-                {/* </Link> */}
+
 
             </div>
         )

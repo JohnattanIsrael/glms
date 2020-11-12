@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCaretSquareLeft } from '@fortawesome/free-solid-svg-icons'
-
-import MapItem from '../mapItems';
 import Card from './card';
 
 class Cards extends Component {
@@ -25,9 +20,8 @@ class Cards extends Component {
 
 
     fetchCards = () => {
-        // TO DO - add dimamic call based on card id
+
         axios.get('https://glms-e42b5.firebaseio.com/user/j/journey/0.json').then(response => {
-            // console.log('response data:', response.data.cards);
             this.setState({
                 journey_name: response.data.journey_name,
                 cards: response.data.cards,
@@ -38,7 +32,6 @@ class Cards extends Component {
     }
 
     cards = () => {
-        // return console.log('cards', this.state.cards)
         return (
             this.state.cards.map(card => {
                 return (
@@ -56,9 +49,9 @@ class Cards extends Component {
     }
 
     fetchData = () => {
-        // TO DO - add dimamic call based on user_email
+
         axios.get('https://glms-e42b5.firebaseio.com/user/j.json').then(response => {
-            // console.log('response data:', response.data.journey);
+
             this.setState({
                 data: response.data,
                 hero: response.data.hero
@@ -78,17 +71,6 @@ class Cards extends Component {
 
         return (
             <div className='cards-page'>
-                {/* <div className='cards-page__navbar'>
-                    <Link to='/'>
-                        <FontAwesomeIcon icon={faCaretSquareLeft} />
-                    </Link>
-                    <MapItem
-                        name={this.state.data.name}
-                        level={this.state.hero.level}
-                        points={this.state.hero.points}
-                        class='cards-user'
-                    />
-                </div> */}
 
                 <div className='cards-rail'>
                     {this.cards()}

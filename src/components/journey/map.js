@@ -24,9 +24,7 @@ class Map extends Component {
     }
 
     fetchData = () => {
-        // TO DO - add dimamic call based on user_email
         axios.get('https://glms-e42b5.firebaseio.com/user/j.json').then(response => {
-            // console.log('response data:', response.data.journey);
             this.setState({
                 data: response.data,
                 hero: response.data.hero,
@@ -65,7 +63,6 @@ class Map extends Component {
 
         return (
             <div className={`dashboard`}>
-                {/* {console.log('the email to dinamically call API:', this.state.user_id)} */}
                 <div className='dashboard__left'>
                     <MapItem
                         name={this.state.data.name}

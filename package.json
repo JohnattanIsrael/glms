@@ -1,7 +1,8 @@
 {
   "name": "react-redux-router",
   "engines": {
-    "node": "12.x"
+    "node": "12.x",
+    "npm": "6.x"
   },
   "version": "1.0.0",
   "description": "Basic skeleton codebase for React/Redux/Router applications.",
